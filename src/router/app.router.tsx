@@ -3,6 +3,8 @@ import { AdminPage } from "@/admin/pages/AdminPage";
 import { HeroPage } from "@/heroes/pages/hero/HeroPage";
 import { HomePage } from "@/heroes/pages/home/HomePage";
 import { SearchPage } from "@/heroes/pages/search/SearchPage";
+import { HeroesLayout } from '@/heroes/layouts/HeroesLayout';
+import { AdminLayout } from '@/admin/layouts/AdminLayout';
 
 
 
@@ -11,6 +13,11 @@ export const appRouter = createBrowserRouter([
 
     {
         path: '/',
+        element: <HeroesLayout />,
+        children: [
+
+            {
+        index: true,
         element: <HomePage />
     },
     {
@@ -22,10 +29,16 @@ export const appRouter = createBrowserRouter([
         element: <SearchPage /> 
     },
 
-    {
+        ],
+    },
+        {
         path: 'admin',
-        element: <AdminPage/>
-    },    
-
-
+        element: <AdminLayout />,
+        children: [
+                {
+                    index: true,
+                    element: <AdminPage/>
+                },
+        ],
+    },
 ]);
