@@ -1,5 +1,6 @@
 import { CustomJumbotrom } from "@/components/custom/CustomJumbotrom";
 import { HeroStats } from "@/heroes/components/HeroStats";
+import { SearchControls } from "./ui/SearchControls";
 
 export const SearchPage = () => {
   return (
@@ -11,6 +12,11 @@ export const SearchPage = () => {
 
      {/* Stats Dashboard */}
            <HeroStats></HeroStats>
+
+      {/* Controls */}
+      {/* Advanced Filters */}
+      <SearchControls></SearchControls>
+
 
     </>
   );
